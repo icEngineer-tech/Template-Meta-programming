@@ -9,10 +9,11 @@ We all know that using templates is going to be excecuted at compile time, so yo
 
 
 What about the 2nd version:
-The second one is easy and tricky, I invite you to take a look at binet formula, it will make things easy. Using "const" will help us at compile time. Moving forward, I used the compact version of if statement. Notice that I've used the static cast because simply, with the root square we will have a double so we have to static cast it to have the right result.
+The second one is easy and tricky, I invite you to take a look at 'binet formula', it will make things easy. Using "const" will help us at compile time. Moving forward, I used the compact version of if statement. Notice that I've used the static cast because simply, with the root square we will have a double so we have to static cast it to have the right result.
 
 Moving to the 3rd version:
-
+It's really simple to understand, it's a regular function that I've added a struct to make it available only at compile time.
+Here you have really the choice between adding the struct or not, it's up to you and what you want to achieve.
 
 
 
