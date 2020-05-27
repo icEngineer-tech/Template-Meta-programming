@@ -1,6 +1,7 @@
 #include <array>
 #include <utility>
 #include <type_traits>
+#include <cmath>
 
 /* Please refer to readme.txt to understand how the 3 versions work
 make sure to use the version that match with what you want to do */
