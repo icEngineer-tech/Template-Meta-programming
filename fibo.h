@@ -57,3 +57,18 @@ constexpr auto Fibo(unsigned i) -> unsigned int
 {
 	return (i == 0) ? 0 : (i == 1) ? 1 : (Fibo(i - 1) + Fibo(i - 2));
 }
+
+/* here some utilisation */
+	/*1st version*/
+	unsigned i;
+	std::cout << "Enter the value: " << std::endl;
+	std::cin >> i;
+	std::cout << fib(i);
+
+	/*2nd version*/
+	std::cout << b_fib(6);
+
+	/*3rd version*/
+	dis<Fibo(4)>out;
+
+/* you can use other formats, it's up to you */
