@@ -28,7 +28,7 @@ struct Fib<0>
 template<size_t...S>
 auto fib_helper(std::index_sequence<S...> /*unused*/, const unsigned i) -> unsigned
 {
-	std::array<int, sizeof ... (S)> arr{Fib<I>::val...};
+	std::array<int, sizeof ... (S)> arr{Fib<S>::val...};
 	return arr[i];
 }
 auto fib(const unsigned i) -> unsigned int
