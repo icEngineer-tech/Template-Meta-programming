@@ -25,10 +25,10 @@ struct Fib<0>
 	enum { val = 0 };
 };
 
-template<size_t...I>
-auto fib_helper(std::index_sequence<I...> /*unused*/, const unsigned i) -> unsigned
+template<size_t...S>
+auto fib_helper(std::index_sequence<S...> /*unused*/, const unsigned i) -> unsigned
 {
-	std::array<int, sizeof ... (I)> arr{Fib<I>::val...};
+	std::array<int, sizeof ... (S)> arr{Fib<I>::val...};
 	return arr[i];
 }
 auto fib(const unsigned i) -> unsigned int
