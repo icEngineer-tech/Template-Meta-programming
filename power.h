@@ -18,3 +18,36 @@ inline int power<0>(const int_fast16_t x)
 {
 	return 1;
 }
+
+
+/*3rd version*/
+template<int_fast16_t i>
+struct Power
+{
+	enum { val = Power<i - 1>::val };
+};
+template <>
+struct Power<1>
+{
+	enum { val = 1 };
+};
+template <>
+struct Power<0>
+{
+	enum { val = 1 };
+};
+
+
+/*4th version*/
+template<int_fast16_t x>
+struct dis
+{
+	dis() { std::cout << x << std::endl; }
+};
+constexpr inline int Ppow(const unsigned i, unsigned x)
+{
+	unsigned p = 1;
+	for (; x > 0; x--)
+		p *= i;
+	return p;
+}
