@@ -46,3 +46,26 @@ constexpr inline int Power(const unsigned i, unsigned x)
 		p *= i;
 	return p;
 }
+
+/*5th version*/			/*an other version with std::make_index_sequence which's useful at compile time*/
+template<unsigned x>
+struct Power
+{
+	enum { value = Power<x - 1>::value + 1 };
+};
+template<>
+struct Power<0>
+{
+	enum { value = 1 };
+};
+template<size_t...I>
+unsigned int power_helper(std::index_sequence<I...>, unsigned i)
+{
+	std::array<int, sizeof...(I)>ar = { Power<I>::value... };
+	return ar[i];
+}
+inline int power(const unsigned i, unsigned x)
+{
+	int p = 1; for (; x > 0; x--)	p *= i;
+	return power_helper(std::make_index_sequence<2500>(), p);
+}
