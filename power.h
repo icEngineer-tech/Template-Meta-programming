@@ -21,7 +21,7 @@ inline int power<0>(const int_fast16_t x)
 
 
 /*3rd version*/
-template<int_fast16_t i>
+template<int_fast16_t i>		/*instead of enum we could also use static const val = ...*/
 struct Power
 {
 	enum { val = Power<i - 1>::val };
