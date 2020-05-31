@@ -21,7 +21,7 @@ inline int Power<0>(const int_fast16_t x)
 
 
 /*3rd version*/
-template<int_fast16_t i, int_fast16_t x>
+template<int_fast16_t i, int_fast16_t x>		/*sample of implementation: std::cout << Power<2, 3>::val;*/
 struct Power
 {
 	enum { val = i * Power<i ,x-1>::val };
